@@ -217,7 +217,7 @@ def lattice_attack_cli(file_name, loop):
     except json.JSONDecodeError:
         print("Data file content is not JSON compatible.")
         return
-    message = data.get("message")
+    signatures = data
     if message:
         hash_int = ecdsa_lib.sha2_int(bytes(message))
     else:
